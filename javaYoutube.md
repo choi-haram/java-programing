@@ -1,4 +1,4 @@
-# 자바 강좌 정리 - 동 빈
+# 자바 강좌 헷갈리는 부분 & 핵심 정리 - 동 빈
 
 ## 2강 - 변수, 상수
 
@@ -43,8 +43,152 @@ final static double PI = 3.145292; //상수는 main 함수 밖에 선언!
  
  Boolean experssion ? True part : False part
  
+ 연산자 관련 상식 : i++와 ++i는 단순히 갑슬 증가시키려는 목적이라면 그 기능이 동일하지만 출력하는 문자 안에서는 달라짐
+ 100<x<200은 잘못된 표현이다. (100<x) && (x<200)로 and 연산자로 표현하는 것이 올바른 연산 식 표현이다.
+ i++는 i+= 1과 동일한 표현이다. 또한 i = i+1과도 동일한 표현이다. 모두 1만큼 증가시킨다는 의미를 갖고있다.
  
- ## 5장 - 조건문 & 반복문
  
- ## 6장 - 기본 입출력
+ ## 5장 - 조건문 & 반복문 (1)
  
+ 조건문 반복문은 논리적 흐름을 의미
+ 
+ -  If문을 이용하여 문자열이 특정 문자열을 포함하는지 확인하는 프로그램을 작성
+
+``` java
+ public class Main {
+
+ 	public static void main(String[] args) {
+	
+		String a =  "I Love you";
+	 	if(a.contains("Love")) {
+			System.out.println("Me too");	
+		} 
+		else 
+		{
+			System.out.println("No");
+		}
+	}
+
+}
+
+```
+ 
+## 6장 - 조건문 & 반복문 (2) 
+
+ -  점수에 따라서 다른 메세지를 출력하는 프로그램 작성
+
+
+ ``` java
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		 int score = 92;
+		 
+		 if(score>=90) {
+			 System.out.println("A+입니다");
+		 }
+		 else if(score>=80) {
+			 System.out.println("B+입니다");
+		 }
+		 else if(score>=70) {
+			 System.out.println("C+입니다");
+		 }
+		 else 
+		 {
+			 System.out.println("F입니다");
+		 }
+
+	}
+
+}
+```
+ - 문자열과 정수형을 각각 조건문을 이용해 활용해보고 그 차이점을 공부
+
+``` java
+
+ 
+public class Main {
+
+	public static void main(String[] args) {
+		
+		String a = "MAN";
+		int b = 0;
+		
+		// 자바는 String을 비교할 때 equal()을 이용한다.
+		// 그 이유는 String은 다른 자료형과 다른 문자열 자료형이기 때문
+		if(a.equals("MAN"))
+		{
+			System.out.println("남자 입니다");
+		}
+		else
+		{
+			System.out.println("여자 입니다");
+ 		}
+		if(b == 3) 
+		{
+			System.out.println("b는 3입니다");
+		}
+		else
+		{
+			System.out.println("b는 3이 아닙니다");
+		}
+		if(a.equalsIgnoreCase("man")&& (b == 0))
+		{
+			System.out.println("참입니다");
+		}
+		
+
+	}
+
+}
+```
+
+ - While문을 이용하여 1부터 1000까지의 합을 출력하는 프로그램
+
+``` java
+
+public class Main {
+
+	public static void main(String[] args) {
+				
+		int i = 1, sum = 0;
+		while(i<=1000)
+		{
+			sum += i++; // sum = sum + i++;
+		}
+		System.out.println(sum);
+	}
+}
+```
+
+ - for문을 이용하여 삼각형을 출력하는 프로그램을 작성해봅시다
+  
+```java
+public class Main {
+	final static int N = 15;
+	public static void main(String[] args) {
+		for(int i = N; i>0; i--)
+		{
+			for(int j = i; j>0; j--)
+			{
+				System.out.print("*");
+			}
+			System.out.println("");
+		}
+	}
+}
+```
+조건문 & 반복문 기본 상식 : 하나의 비교 연산자는 true 혹은 false를 반환하게 된다
+모든 조건문, 반복문에서는 왠만해서 무조건 괄호를 적용
+for문 혹은 while문은 얼마든지 중첩 가능
+for(;;)는 while(true)와 똑같이 무한 루프라는 의미로 동작
+brake;를 이용하여 반복문을 즉시 빠져나올 수 있다.
+
+
+
+ ## 7장 - 기본 입출력
+ 
+ 자바에서는 대표적으로 Scanner() 함수를 이용하여 사용자와 상호작용 할 수 있다. 일반적으로 Scanner sc = new Scanner(System.in);으로 클래스 객체를 생성한 뒤에 sc.nextInt();와 
+ 같은 방법으로 int형을 입력 받을 수 있다
