@@ -192,3 +192,49 @@ brake;를 이용하여 반복문을 즉시 빠져나올 수 있다.
  
  자바에서는 대표적으로 Scanner() 함수를 이용하여 사용자와 상호작용 할 수 있다. 일반적으로 Scanner sc = new Scanner(System.in);으로 클래스 객체를 생성한 뒤에 sc.nextInt();와 
  같은 방법으로 int형을 입력 받을 수 있다
+ 
+ ``` java
+ import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new scanner(System.in); //Scanner  클래스 인스턴스인 sc를 만들고 new scanner을 사용해 초기화 시킴 
+ 		// Scanner은 자바에서 제공하는 기본 라이브러리 중 하나 어떤 입출력을 가능하게 해주는 라이브러리, 기본 라이브러리를 가져오려면 import 사용해야 함
+		// Scanner도 하나의 클래스 처럼 작성이 되어있고 당연히 내부적으로 어떤 함수를 가질 수 있다.
+		// sc라는 변수를 만들었고 만들어줄 때 이렇게 초기화를 해주었는데, System.in 이라는 것은 일반적으로 사용하는 콘솔창에서 입력하는 어떠한 데이터 
+		System.out.println("정수를 입력하세요: ");
+		int i = sc.nextInt(); //즉 sc라는 입출력함수가 바로 콘솔창에 입력되는 다음 정수를 입력받아서 아예 넣어준다. 사용자가 입력한 값을 I에다넣음
+		System.out.println("입력된 정수는 " + i + " : ");
+	}
+
+}
+``` java
+
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		File file = new File("input.txt");
+		try {
+			Scanner sc = new Scanner(file); //Try는 이부분을 실행하겠다
+			while(sc.hasNextInt()) //sc가 현재 읽어오는 파일 에서 다음으로 읽을 정수가 있는지 물어보는 거 
+			{
+				System.out.println(sc.nextInt()* 100);
+			}
+			sc.close();
+		} catch (FileNotFoundException e) { //FileNotFoundExceptiond이라는 오류가 발생했을 경우 아래 로 넘어갈 수 있는 예외처리 구문
+
+			System.out.println("파일을 읽어오는 도중에 오류가 발생하였습니다.");//e.printStackTrace(); 원래는 얘가 기본
+		}
+	}
+
+}
+```
+
