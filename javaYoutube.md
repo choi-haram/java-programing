@@ -239,4 +239,34 @@ public class Main {
 
 }
 ```
+ - 8장 과제(1)
 
+```java
+
+
+public class Main {
+
+	public static void main(String[] args) {
+		System.out.println("최하람");
+
+	}
+
+}
+```
+
+ - 8장 과제(3)
+
+```java
+public class Main {
+
+	public static void main(String[] args) {
+		for(int i = 0; i<20; i++) {
+			for(int j = 0; j<10; j++) {
+				System.out.print("*");
+			}
+			System.out.println("");
+		}
+	}
+
+}
+```
