@@ -270,3 +270,86 @@ public class Main {
 
 }
 ```
+ ## 9장 - 사용자 정의 함수(1)
+ - 3개의 수 최대공약수를 찾는 프로그램
+```java
+
+public class Main {
+	//반환형, 함수명, 매개변
+	public static int function(int a, int b, int c) {
+		int min;
+		if(a>b)
+		{
+			if(b>c)
+			{
+				min = c;
+			}
+			else
+			{
+				min = b;
+			}
+		}
+		else
+		{
+			if(a>c)
+			{
+				min = c;
+			}
+			else
+			{
+				min = a;
+			}
+		}
+		for(int i = min; i>0; i--)
+		{
+			if(a % i ==0  && b % i == 0 && c % i == 0)
+			{
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("400, 300, 200의 최대 공약수는 : "+ function(400,300,200));
+
+	}
+
+}
+```
+ 
+ ## 10장 - 사용자 정의 함수(2)
+  - 약수 중 k번째로 작은 수를 찾는 프로그램
+ ```java
+ 
+public class Main {
+	public static int function(int number, int k) {
+		for(int i = 1; i <= number; i++)
+		{
+			if(number % i == 0)
+			{
+				k--;
+				if(k==0)
+				{
+					return i;
+				}
+			}
+		}
+		return -1;
+	}
+	//main method가 종료되면 프로그램이 종료된 것과 마찬가지 이기 때문에 반환형이 없다는 뜻에 void사용.
+	public static void main(String[] args) {
+			int result = function(3050,10);
+			if(result == -1)
+			{
+				System.out.println("3050의 10번째 약수는 없습니다.");
+			}
+			else
+			{
+				System.out.println("3050의 10번째 약수는 " + result + "입니다");
+			}
+	}
+
+}
+```
+ 
