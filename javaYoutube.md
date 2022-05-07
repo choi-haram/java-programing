@@ -353,3 +353,41 @@ public class Main {
 }
 ```
  
+ - 문자열 마지막 단어 반환하는 함수
+
+```java
+
+public class Main {
+	public static char function(String input) {//어떠한 문자열을 입력 받아 그 문자를 처리해서 딘어를 하나 반환할 수 있도록 해주는 것
+		return input.charAt(input.length() - 1); //charAt은 0부터 시작, length는 글자 수 세는 것
+		
+	}
+	
+	public static void main(String[] args) {
+		System.out.println("Hello workld의 마지막 단어는 " + function("Hello world"));
+	}
+			
+```
+
+- max() 함수를 이용하여 최대값을 저장하는 프로그램
+
+```java
+
+public class Main {
+	
+	public static int max(int a, int b) {
+		return (a>b) ? a : b;
+	}
+	
+	public static int function(int a, int b, int c) {
+		int result = max(a, b);
+		result = max(result, c);
+		return result;
+	}
+	
+	public static void main(String[] args) {
+		
+		System.out.println("(345,567,789)중에서 가장 큰 값은 " +function(345, 567, 789));
+	}
+}
+```
