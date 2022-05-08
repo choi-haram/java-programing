@@ -393,5 +393,51 @@ public class Main {
 ```
 ## 11장
 
+ - 반복함수를 이용해 팩토리얼 구하기
+```java
+
+public class Main {
+	
+	public static int factorial(int number) {
+		int sum = 1;
+		for(int i = 2; i <= number; i++)
+		{
+			sum  = sum * i;
+		}
+		return sum;
+	}
+	
+	public static void main(String[] args) {
+		System.out.print(factorial(10));
+
+	}
+
+}
+```
+
+ - 재귀함수를 이용해 팩토리얼 구하기
+
+
+public class Main {
+	
+	public static int factorial(int number) {
+		if(number ==1)
+		{ 
+			return 1;
+		}
+		else
+		{
+		return number * factorial( number - 1);
+		}
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(factorial(10));
+
+	}
+
+}
+
 ## 12장
-## 12자
+
+## 13장
