@@ -417,7 +417,7 @@ public class Main {
 
  - 재귀함수를 이용해 팩토리얼 구하기
 
-
+```java
 public class Main {
 	
 	public static int factorial(int number) {
@@ -437,7 +437,7 @@ public class Main {
 	}
 
 }
-
+```
 ## 12장
 
 ## 13장
