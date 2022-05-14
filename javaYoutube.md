@@ -440,9 +440,74 @@ public class Main {
 ```
 ## 12장
 
+ - 반복함수를 이용해 피보나치 수열 구하기
+```java
+public class Main {
+	
+	public static int fibonacci(int number) {
+		int one = 1;
+		int two = 1;
+		int result = -1;
+		if(number == 1) {
+			return one;
+		}
+		else if(number == 2)
+		{
+			return two;
+		}
+		else
+		{
+			for(int i = 2; i<number; i++)
+			{
+				result = one + two;
+				one = two;
+				two = result;
+				
+			}
+		}
+		return result;
+	}
+	
+	public static void main(String[] args) {	 
+		System.out.println("피보나치 수열의 5번째 원소는" + fibonacci(10));
+	}
+	
+}
+```
+
+ - 재귀함수를 이용해 피보나치 수열 구하기
+ 
+```java
+public class Main {
+	
+	public static int fibonacci(int number) {
+		if(number == 1)
+		{
+			return 1;
+		}
+		else if(number == 2)
+		{
+			return 1;
+		}
+		else
+		{
+			return fibonacci(number - 1) +  fibonacci(number - 2);
+		}
+	}
+	
+	public static void main(String[] args) {	 
+		System.out.println("피보나치 수열의 5번째 원소는" + fibonacci(5));
+	}
+	
+}
+```
+
+재귀함수 사용하는 것이 반복함수를 사용하는 것보다 코드가 간단할 수는 있지만 시간이 오래 걸리는 경우도 있으니 잘 사용하기
+
+
 ## 13장
 
 ## 14장
 
 ## 15장
-		}
+		
