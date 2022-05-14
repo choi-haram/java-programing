@@ -507,6 +507,66 @@ public class Main {
 
 ## 13장
 
+- 배열 : 데이터가 많을 때 그 많은 데이터를 효과적으로 처리하고 저장할 수 있도록 하는 자료 형태
+ 
+- 'array'라는 이름의 배열 만드는 법
+int[] arryay = new int[100];
+new는 어떠한 변수 또는 인스턴스 만들 때 사용하는 약속된 하나의 언어, 위애 코드가 배열을 만들기 위한 하나의 문법이라고 생각하면 된다.
+
+
+ - 원하는 개수만큼의 배열 생성 및 최대값을 구하는 프로그램을 작성합니다.
+
+
+```java
+import java.util.Scanner;
+
+public class Main {
+	
+	public static int max(int a, int b) {
+		return (a > b) ? a : b;
+	}
+	public static void main(String[] args) {
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("생성할 배열의 크기를입력하세요 : ");
+		int number = scanner.nextInt();
+		int[] array = new int[number];
+		for(int i = 0; i < number; i++)
+		{
+			System.out.print("배열의 입력할 정수를 하나씩 입력하세요(양수) : ");
+			array[i] = scanner.nextInt();
+		}
+		int result = -1;
+		for(int i = 0; i < number; i++)
+		{
+			result = max(result, array[i]);
+		}
+		System.out.println("입력한 모든 정수 중에서 가장 큰 값은 " + result +" 입니다");
+	}
+
+}
+```
+ - 100개의 랜덤 정수의 평균을 구하는 프로그램
+
+```java
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+	
+	int[] array = new int[100];
+	for(int i = 0; i < 100; i++) {
+		array[i] = (int) (Math.random() * 100 + 1);
+	}
+	int sum = 0;
+	for(int i = 0; i < 100; i++) {
+		sum += array[i];
+	}
+	System.out.println("100개의 랜덤 정수의 평균 값은" + sum/100 + " 입니다");	
+	}
+}
+```
 ## 14장
 
 ## 15장
