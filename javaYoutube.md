@@ -609,30 +609,4 @@ public class Main {
 
 ## 20장
 
-``` java
 
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
-public class Main {
-
-	public static void main(String[] args) {
-		
-		File file = new File("input.txt");
-		try {
-			Scanner sc = new Scanner(file); //Try는 이부분을 실행하겠다
-			while(sc.hasNextInt()) //sc가 현재 읽어오는 파일 에서 다음으로 읽을 정수가 있는지 물어보는 거 
-			{
-				System.out.println(sc.nextInt()* 100);
-			}
-			sc.close();
-		} catch (FileNotFoundException e) { //FileNotFoundExceptiond이라는 오류가 발생했을 경우 아래 로 넘어갈 수 있는 예외처리 구문
-
-			System.out.println("파일을 읽어오는 도중에 오류가 발생하였습니다.");//e.printStackTrace(); 원래는 얘가 기본
-		}
-	}
-
-}
-```
