@@ -54,26 +54,7 @@ final static double PI = 3.145292; //상수는 main 함수 밖에 선언!
  
  -  If문을 이용하여 문자열이 특정 문자열을 포함하는지 확인하는 프로그램을 작성
 
-``` java
- public class Main {
-
- 	public static void main(String[] args) {
-	
-		String a =  "I Love you";
-	 	if(a.contains("Love")) {
-			System.out.println("Me too");	
-		} 
-		else 
-		{
-			System.out.println("No");
-		}
-	}
-
-}
-
-```
- 
-## 6장 - 조건문 & 반복문 (2) 
+``` javaㅇ(2) 
 
  -  점수에 따라서 다른 메세지를 출력하는 프로그램 작성
 
