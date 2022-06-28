@@ -608,5 +608,3 @@ public class Main {
 
 ## 21장
 
-종료
-
